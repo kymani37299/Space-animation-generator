@@ -17,7 +17,7 @@ public class Star {
 		this.w = w;
 		this.h = h;
 		
-		int rMax = (w+h)/200 + 4;
+		int rMax = (w+h)/250 + 4;
 		int rMin = 2;
 		r = (int)(Math.random()*(rMax-rMin) + rMin);
 		
@@ -36,10 +36,7 @@ public class Star {
 	}
 	
 	private int quadraticStar(int d,int r) {
-		final int m = 255/5; 
-		final int n = r/2;
-		
-		final double b = (r*(2*m-510))/(n*(2*r-n));
+		final double b = -510/r;
 		final double a = -b/(2*r);
 		
 		return (int)(a*d*d + b*d + 255);
